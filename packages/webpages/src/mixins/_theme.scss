@@ -1,0 +1,7 @@
+@mixin theme($property-map) {
+  @each $prop, $token in $property-map {
+    $value: theme($token);
+    #{$prop}: $value;
+    #{$prop}: var(--z-theme-#{$token}, $value);
+  }
+}

@@ -1,0 +1,13 @@
+export {default as _blueMap, blue } from './blue';
+export {default as _cyanMap, cyan } from './cyan';
+export {default as _displayMap, display } from './display';
+export {default as _grayMap, gray } from './gray';
+export {default as _greenMap, green } from './green';
+export {default as _indigoMap, indigo } from './indigo';
+export {default as _magentaMap, magenta } from './magenta';
+export {default as _orangeMap, orange } from './orange';
+export {default as _purpleMap, purple } from './purple';
+export {default as _redMap, red } from './red';
+export {default as _tealMap, teal } from './teal';
+export {default as _translucentMap, translucent } from './translucent';
+export {default as _yellowMap, yellow } from './yellow';

@@ -1,0 +1,5 @@
+@import '../theme-map';
+
+@function get-theme($token) {
+  @return map-get($theme-map, $token);
+}

@@ -1,0 +1,136 @@
+@import './mixins/theme.scss';
+
+
+body {
+  line-height: $z-font-leadingNormal;
+}
+
+p {  
+  @include theme((
+    margin-top: spacingMd,
+    margin-bottom: spacingMd,
+  ));
+}
+
+.z-title, h1, h2, h3, h4, h5, h6,
+.z-h1, .z-h2, .z-h3, .z-h4, .z-h5, .z-h6 {
+  line-height: $z-font-leadingNormal;
+
+  @include theme((
+    margin-top: spacingXs,
+    margin-bottom: spacingMd,
+    font-family: fontHeadings,
+  ));
+}
+
+.z-title {
+  font-size: $z-font-sizeTitle;
+
+  @include when-md {
+    font-size: $z-font-mdSizeTitle;
+  }
+
+  @include when-lg {
+    font-size: $z-font-lgSizeTitle;
+  }
+
+  @include when-xl {
+    font-size: $z-font-xlSizeTitle;
+  }
+}
+
+h1, .z-h1 {
+  font-size: $z-font-sizeH1;
+
+  @include when-md {
+    font-size: $z-font-mdSizeH1;
+  }
+
+  @include when-lg {
+    font-size: $z-font-lgSizeH1;
+  }
+
+  @include when-xl {
+    font-size: $z-font-xlSizeH1;
+  }
+}
+
+h2, .z-h2 {
+  font-size: $z-font-sizeH2;
+
+  @include when-md {
+    font-size: $z-font-mdSizeH2;
+  }
+
+  @include when-lg {
+    font-size: $z-font-lgSizeH2;
+  }
+
+  @include when-xl {
+    font-size: $z-font-xlSizeH2;
+  }
+}
+
+h3, .z-h3 {
+  font-size: $z-font-sizeH3;
+
+  @include when-md {
+    font-size: $z-font-mdSizeH3;
+  }
+
+  @include when-lg {
+    font-size: $z-font-lgSizeH3;
+  }
+
+  @include when-xl {
+    font-size: $z-font-xlSizeH3;
+  }
+}
+
+h4, .z-h4 {
+  font-size: $z-font-sizeH4;
+
+  @include when-md {
+    font-size: $z-font-mdSizeH4;
+  }
+
+  @include when-lg {
+    font-size: $z-font-lgSizeH4;
+  }
+
+  @include when-xl {
+    font-size: $z-font-xlSizeH4;
+  }
+}
+
+h5, .z-h5 {
+  font-size: $z-font-sizeH5;
+
+  @include when-md {
+    font-size: $z-font-mdSizeH5;
+  }
+
+  @include when-lg {
+    font-size: $z-font-lgSizeH5;
+  }
+
+  @include when-xl {
+    font-size: $z-font-xlSizeH5;
+  }
+}
+
+h6, .z-h6 {
+  font-size: $z-font-sizeH6;
+
+  @include when-md {
+    font-size: $z-font-mdSizeH6;
+  }
+
+  @include when-lg {
+    font-size: $z-font-lgSizeH6;
+  }
+
+  @include when-xl {
+    font-size: $z-font-xlSizeH6;
+  }
+}

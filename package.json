@@ -1,0 +1,39 @@
+{
+  "name": "z11",
+  "version": "1.0.0",
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "apps/*",
+      "scripts",
+      "docs",
+      "utils"
+    ]
+  },
+  "main": "index.js",
+  "repository": "https://github.com/i11n/z11.git",
+  "author": "Eric L. Bentley <11730553+ebntly@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-conventional": "^9.1.2",
+    "husky": "^4.2.5",
+    "lerna": "^3.20.2",
+    "typescript": "^4.0.2"
+  },
+  "engines": {
+    "node": ">=12 <13",
+    "yarn": ">=1.22.4 <3",
+    "npm": "  USE YARN, PLEASE!  "
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "dependencies": {
+    "get-contrast": "^2.0.0",
+    "just-scripts": "^0.44.4"
+  }
+}

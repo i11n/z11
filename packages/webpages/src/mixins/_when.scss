@@ -1,0 +1,23 @@
+@mixin when($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content();
+  }
+}
+
+@mixin when-md {
+  @include when($z-breakpointMd) {
+    @content;
+  }
+}
+
+@mixin when-lg {
+  @include when($z-breakpointLg) {
+    @content;
+  }
+}
+
+@mixin when-xl {
+  @include when($z-breakpointXl) {
+    @content;
+  }
+}
