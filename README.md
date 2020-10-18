@@ -21,6 +21,11 @@ Monorepo for the z11 design language, SASS library, and Components
     * `gray`
     * `dark`
   * Located in [`./packages/z11-theme`](./packages/z11-theme).
+* `@z11/prototype`
+  * A prototyping library to help with building components and themes based on the `@z11/shared-tokens` tokens.
+  * Provides a massive amount of utility classes.
+  * Distributes `.css` files (`dist/css`)
+  * Located in [`./packages/prototype`](./packages/prototype).
 * `@z11/webpages`
   * HTML/CSS library for web pages.
   * Uses `@z11/z11-theme` by default, but can be cloned and built with another theme.
@@ -44,9 +49,29 @@ Monorepo for the z11 design language, SASS library, and Components
   * Located in [`./packages/svelte-components`](./packages/svelte-components).
 
 ## Workflow
+### Distribution
 1. Load a distributed theme `.css` file containing the custom properties for the theme.
 2. Load the distributed `@z11/webpages` `.css` file.
 3. Use components.
+
+**Example**
+```html
+<html>
+  <head>
+    <title>My App</title>
+    <link id="theme-switcher" rel="stylesheet" type="text/css" href="/assets/css/z11-theme-default.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/z11-webpages.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/z11-vanilla-components.css" />
+  </head>
+  <body>
+    ...
+    <script type="text/javascript" src="/assets/js/z11-vanilla-components.js"></script>
+    <script type="text/javascript" src="/app/main.js">
+  </body>
+</html>
+```
+
+
 ## Components
 
 ## Documentation

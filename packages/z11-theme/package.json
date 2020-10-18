@@ -1,6 +1,6 @@
 {
   "name": "@z11/z11-theme",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "> TODO: description",
   "author": "Eric L. Bentley <11730553+ebntly@users.noreply.github.com>",
   "homepage": "https://github.com/i11n/z11#readme",
@@ -18,7 +18,6 @@
     "url": "git+https://github.com/i11n/z11.git"
   },
   "scripts": {
-    "build": "just build",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
@@ -26,8 +25,5 @@
   },
   "dependencies": {
     "@z11/shared-tokens": "^0.0.0"
-  },
-  "devDependencies": {
-    "@z11/build": "^0.0.0"
   }
 }

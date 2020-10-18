@@ -22,9 +22,5 @@
   },
   "bugs": {
     "url": "https://github.com/i11n/z11/issues"
-  },
-  "devDependencies": {
-    "@z11/shared-tokens": "^0.0.0",
-    "@z11/z11-theme": "^0.0.0"
   }
 }

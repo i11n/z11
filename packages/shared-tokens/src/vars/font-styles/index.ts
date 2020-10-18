@@ -1,7 +1,19 @@
-export {default as _familyMap, family} from './family';
-export {default as _leadingMap, leading} from './leading';
-export {default as _sizeMap, size} from './size-base';
-export {default as _lgSizeMap, lgSize} from './size-lg';
-export {default as _mdSizeMap, mdSize} from './size-md';
-export {default as _xlSizeMap, xlSize} from './size-xl';
-export {default as _trackingMap, tracking} from './tracking';
+import { fontFamily as _fontFamily } from './font-family';
+import { lineHeight as _lineHeight } from './line-height';
+import { baseFontSize as _baseFontSize } from './base-font-size';
+import { largeFontSize as _largeFontSize } from './large-font-size';
+import { letterSpacing as _letterSpacing } from './letter-spacing';
+
+export const fontFamily = _fontFamily;
+export const lineHeight = _lineHeight;
+export const baseFontSize = _baseFontSize;
+export const largeFontSize = _largeFontSize;
+export const letterSpacing = _letterSpacing;
+
+export const font = {
+  family: fontFamily,
+  leading: lineHeight,
+  baseSize: baseFontSize,
+  largeSize: largeFontSize,
+  tracking: letterSpacing,
+};

@@ -1,11 +1,11 @@
 const { join } = require('path');
 
-const SASS_DIR = join('./dist', 'sass');
-const SASS_VAR_DIR = join(SASS_DIR, 'var');
-const SASS_REF_FILE = join(SASS_DIR, '_reference.scss');
+const STYL_DIR = join('./dist', 'styl');
+const STYL_VAR_DIR = join(STYL_DIR, 'var');
+const STYL_REF_FILE = join(STYL_DIR, 'reference.styl');
 
 module.exports = {
-  SASS_DIR,
-  SASS_VAR_DIR,
-  SASS_REF_FILE,
+  STYL_DIR,
+  STYL_VAR_DIR,
+  STYL_REF_FILE,
 };

@@ -1,13 +1,13 @@
 const composeTask = require('./composeVarsTask');
 const { parallel } = require('just-scripts');
 const { createFile, buildFile } = require('@z11/build');
-const { SASS_REF_FILE } = require('./constants');
+const { STYL_REF_FILE } = require('./constants');
 
 const files = [
   'border',
   'breakpoint',
   'color',
-  'depth',
+  'boxShadow',
   'font',
   'grid',
   'height',
@@ -22,8 +22,8 @@ const files = [
 module.exports = parallel(
   ...files.map(composeTask),
   (done) => {
-    createFile(SASS_REF_FILE, buildFile([], ({addLine}) => {
-      files.forEach(file => addLine(`@import './vars/${file}.scss';`));
+    createFile(STYL_REF_FILE, buildFile([], ({addLine}) => {
+      files.forEach(file => addLine(`@import "./vars/${file}"`));
     }), done);
   }
 );
