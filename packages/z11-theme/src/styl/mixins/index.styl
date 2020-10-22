@@ -1,0 +1,53 @@
+theme($property-map)
+  for $prop, $token in $property-map
+    $token = get-theme($token)
+    $value = ()
+    $fallback = ()
+    $sep = list-separator($token)
+
+    for $t in $token
+      $v = get-theme($t)
+      append($fallback, $v)
+      if $v == $t
+        append($value, $v)
+      else
+        append($value, unquote('var(--z-theme-'+ $t + ', ' + $v + ')'))
+
+    $value = unquote(join($sep, $value))
+    $fallback = unquote(join($sep, $fallback))
+    
+    {$prop} $fallback
+
+    if $fallback != $value
+      {$prop} $value
+
+when($breakpoint)
+  @media screen and (min-width: $breakpoint)
+      {block}
+
+when-sm()
+  +when(get-theme(settings-breakpoint-md))
+    {block}
+
+when-md()
+  +when(get-theme(settings-breakpoint-md))
+    {block}
+  
+when-lg()
+  +when(get-theme(settings-breakpoint-lg))
+    {block}
+
+when-xl()
+  +when(get-theme(settings-breakpoint-xl))
+    {block}
+
+when-xxl()
+  +when(get-theme(settings-breakpoint-xxl))
+    {block}
+
+responsive-font($size)
+  $base = lookup('$z-theme-settings-' + $size + '-font-size')
+  font-size unquote('var(--z-theme-settings-' + $size + '-font-size, ' + $base + ')')
+  if get-theme(settings-responsive-font)
+    $large = lookup('$z-theme-settings-' + $size + '-font-size-lg')
+    font-size clamp(unquote('var(--z-theme-settings-' + $size + '-font-size, ' + $base +')'), get-theme(settings-responsive-font-breakpoint), unquote('var(--z-theme-settings-' + $size + '-font-size, ' + $large + ')'))

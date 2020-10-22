@@ -1,5 +1,6 @@
-import { IPalette, ISlotsPalette } from "../ITheme";
+import { IPalette } from "../ITheme";
 import { color } from "@z11/shared-tokens";
+import { createThemeFromPalette } from "../createTheme";
 
 const { cyan, magenta, gray } = color;
 
@@ -35,3 +36,4 @@ const palette: IPalette = {
   },
 };
 
+export const DefaultTheme = createThemeFromPalette(palette);

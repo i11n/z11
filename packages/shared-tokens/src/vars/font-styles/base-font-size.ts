@@ -8,7 +8,7 @@ export const baseFontSize = {
   md: calcBaseFontSize(14),
   lg: calcBaseFontSize(16),
   xl: calcBaseFontSize(20),
-  '2xl': calcBaseFontSize(22),
+  xxl: calcBaseFontSize(22),
   '3xl': calcBaseFontSize(25),
   '4xl': calcBaseFontSize(29),
   '5xl': calcBaseFontSize(32),

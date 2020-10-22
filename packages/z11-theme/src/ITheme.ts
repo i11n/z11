@@ -58,7 +58,7 @@ export interface ISetSettings {
   /**
    * The base `font-size` for `<h3>`.
    */
-  '2xlFontSize': string;
+  xxlFontSize: string;
   /**
    * The base `font-size` for `<h2>`.
    */
@@ -133,7 +133,7 @@ export interface IResponsiveFontSettings {
   /**
    * The large `font-size` for `<h3>`.
    */
-  '2xlFontSizeLg': string;
+  xxlFontSizeLg: string;
   /**
    * The large `font-size` for `<h2>`.
    */

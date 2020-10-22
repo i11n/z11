@@ -18,9 +18,15 @@
     "url": "git+https://github.com/i11n/z11.git"
   },
   "scripts": {
+    "build": "just build",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
     "url": "https://github.com/i11n/z11/issues"
+  },
+  "devDependencies": {
+    "@z11/build": "^0.0.0",
+    "@z11/z11-theme": "^0.1.0",
+    "just-scripts": "^1.2.0"
   }
 }

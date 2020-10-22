@@ -8,7 +8,7 @@ export const largeFontSize = {
   md: calcLargeFontSize(14),
   lg: calcLargeFontSize(16),
   xl: calcLargeFontSize(20),
-  '2xl': calcLargeFontSize(22),
+  xxl: calcLargeFontSize(22),
   '3xl': calcLargeFontSize(25),
   '4xl': calcLargeFontSize(29),
   '5xl': calcLargeFontSize(32),

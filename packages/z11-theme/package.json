@@ -18,6 +18,7 @@
     "url": "git+https://github.com/i11n/z11.git"
   },
   "scripts": {
+    "build": "just build",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
@@ -25,5 +26,8 @@
   },
   "dependencies": {
     "@z11/shared-tokens": "^0.0.0"
+  },
+  "devDependencies": {
+    "@z11/build": "^0.0.0"
   }
 }

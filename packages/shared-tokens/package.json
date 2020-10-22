@@ -26,12 +26,6 @@
     "url": "https://github.com/i11n/z11/issues"
   },
   "devDependencies": {
-    "@types/color-convert": "^1.9.0",
-    "@types/tinycolor2": "^1.4.2",
     "@z11/build": "^0.0.0"
-  },
-  "dependencies": {
-    "color-convert": "^2.0.1",
-    "tinycolor2": "^1.4.1"
   }
 }
