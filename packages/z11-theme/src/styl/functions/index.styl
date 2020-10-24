@@ -1,20 +1,26 @@
-has-key($object, $key)
-  return $key in keys($object)
+theme-has-key($key) {
+  return lookup('$z-theme-' + $key) != null;
+}
 
-theme-has-key($key)
-  return has-key($theme-map, $key)
+theme-get-key($key) {
+  return lookup('$z-theme-' + $key);
+}
 
-theme-get-key($key)
-  return $theme-map[$key]
+get-theme($token) {
+  if theme-has-key($token) {
+    return theme-get-key($token);
+  }
+  
+  return $token;
+}
 
-get-theme($token)
-  if theme-has-key($token)
-    return theme-get-key($token)
-  return $token
+fallback($primary, $secondary, $fallback) {
+  if theme-has-key($primary) {
+    return $primary;
+  }
+  if theme-has-key($secondary) {
+    return $secondary;
+  }
 
-fallback($primary, $secondary, $fallback)
-  if theme-has-key($primary)
-    return $primary
-  if theme-has-key($secondary)
-    return $secondary
-  return $fallback
+  return $fallback;
+}

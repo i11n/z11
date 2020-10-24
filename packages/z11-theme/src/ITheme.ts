@@ -24,17 +24,37 @@ export interface ISlotsPalette {
   /**
    * The default background color
    */
-  bgColor: string;
+  bg: string;
   /**
    * The default text color
    */
-  textColor: string;
-  
+  text: string;
+  divider: string;
+  subText: string;
+  delBg: string;
+  delText: string;
+  markBg: string;
+  insBg: string;
+  insText: string;
+  delNestedBg: string;
+  delNestedText: string;
+  insNestedBg: string;
+  insNestedText: string;
+  emText: string;
+  linkText: string;
+  linkHoverText: string;
+  codeBg: string;
+  codeText: string;
+  kbdBg: string;
+  kbdText: string;
+  preBg: string;
+  preText: string;
 }
 
 export type ISettings = ISetSettings | (ISetSettings & IResponsiveFontSettings);
 
 export interface ISetSettings {
+  left: string;
   /**
    * If set, overwrites the outline of :focus with a box-shadow.
    */
@@ -103,6 +123,23 @@ export interface ISetSettings {
    * The vertical rhythm (top and bottom spacing) between text. Horizontal rhythm is automatically 2X this.
    */
   rhythm: string;
+
+  dividerSize: string;
+
+  listPadding: string;
+  olCounterSeparator: string;
+  olCounter1: string;
+  olCounter2: string;
+  olCounter3: string;
+  ulBullet1: string;
+  ulBullet2: string;
+  ulBullet3: string;
+  ulBulletSpacing: string;
+  monoFont: string;
+  roundedSm: string;
+  roundedMd: string;
+  roundedLg: string;
+  monoBoldWeight: string | number;
 }
 
 export interface IResponsiveFontSettings {

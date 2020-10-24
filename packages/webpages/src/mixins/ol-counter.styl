@@ -1,0 +1,19 @@
+ol-counter($level) {
+  $counter = unquote('li' + $level);
+  $before = get-theme('settings-ol-counter' + $level);
+  $dotted = get-theme(settings-ol-counter-dotted);
+  $before-var = unquote('var(--z-theme-settings-ol-counter' + $level + ', ' + $before')');
+  
+  counter-reset: unquote('li' + $level);
+  
+  > li {
+    counter-increment: $counter;
+
+    &::before {
+      theme({
+        color: slots-sub-text,
+        content: counter($counter, $before-var) settings-ol-counter-separator,
+      });
+    }
+  }
+}

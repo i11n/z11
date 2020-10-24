@@ -1,7 +1,8 @@
-import { boxShadow, font, spacing } from "@z11/shared-tokens";
+import { boxShadow, font, spacing, height, border } from "@z11/shared-tokens";
 import { ISettings } from "./ITheme";
 
 export const defaultSettings: ISettings = {  
+  left: 'left',
   font: font.family.sansGhost,
   smallFontSize: font.baseSize.sm,
   baseFontSize: font.baseSize.md,
@@ -29,4 +30,19 @@ export const defaultSettings: ISettings = {
   '3xlFontSizeLg': font.largeSize['3xl'],
   '4xlFontSizeLg': font.largeSize['4xl'],
   '5xlFontSizeLg': font.largeSize['5xl'],
+  dividerSize: height.px,
+  listPadding: spacing[9],
+  olCounter1: 'decimal',
+  olCounter2: 'lower-alpha',
+  olCounter3: 'lower-roman',
+  olCounterSeparator: '"."',
+  ulBullet1: '"\\2022"',
+  ulBullet2: '"\\25E6"',
+  ulBullet3: '"\\25AA"',
+  ulBulletSpacing: spacing[2],
+  monoFont: font.family.mono,
+  roundedSm: border.radius.xs,
+  roundedLg: border.radius.lg,
+  roundedMd: border.radius.sm,
+  monoBoldWeight: 600,
 };

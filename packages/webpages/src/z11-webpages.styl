@@ -1,12 +1,5 @@
-/*
- * Includes overridden styles from sanitize.css. (https://csstools.github.io/sanitize.css/)
- */
-
-@import '@z11/z11-theme/dist/styl/themes/DefaultTheme/reference.styl'
-
-html
-  theme({
-    font-size: settings-base-font-size,
-    font-family: settings-font
-  });
-  responsive-font(base);
+//  Use default theme for fallbacks if no theme is provided.
+@import '@z11/z11-theme/dist/styl/themes/DefaultTheme/reference.styl';
+@import './vendor';
+@import './mixins';
+@import './styles';

@@ -1,53 +1,76 @@
-theme($property-map)
-  for $prop, $token in $property-map
-    $token = get-theme($token)
-    $value = ()
-    $fallback = ()
-    $sep = list-separator($token)
+theme($property-map) {
+  for $prop, $token in $property-map {
+    $tokenValue = get-theme($token);
+    $value = ();
+    $fallback = ();
+    $sep = list-separator($tokenValue);
+    if $tokenValue is a 'ident' {
+      for $t in $tokenValue {
+        $v = get-theme($t);
+        append($fallback, $v);
+        if $v == $t {
+          append($value, $v);
+        } else {
+          append($value, unquote('var(--z-theme-'+ $t + ', ' + $v + ')'));
+        }
+      }
+    } else {
+      append($fallback, $tokenValue);
+      append($value, unquote('var(--z-theme-'+ $token + ', ' + $tokenValue + ')'));
+    }
 
-    for $t in $token
-      $v = get-theme($t)
-      append($fallback, $v)
-      if $v == $t
-        append($value, $v)
-      else
-        append($value, unquote('var(--z-theme-'+ $t + ', ' + $v + ')'))
-
-    $value = unquote(join($sep, $value))
-    $fallback = unquote(join($sep, $fallback))
+    $value = unquote(join($sep, $value));
+    $fallback = unquote(join($sep, $fallback));
     
-    {$prop} $fallback
+    {$prop}: $fallback;
 
-    if $fallback != $value
-      {$prop} $value
+    if $fallback != $value {
+      {$prop}: $value;
+    }
+  }
+}
 
-when($breakpoint)
-  @media screen and (min-width: $breakpoint)
+when($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
       {block}
+  }
+}
 
-when-sm()
-  +when(get-theme(settings-breakpoint-md))
+when-sm() {
+  +when(get-theme(settings-breakpoint-md)) {
     {block}
+  }
+}
 
-when-md()
-  +when(get-theme(settings-breakpoint-md))
+when-md() {
+  +when(get-theme(settings-breakpoint-md)) {
     {block}
+  }
+}
   
-when-lg()
-  +when(get-theme(settings-breakpoint-lg))
+when-lg() {
+  +when(get-theme(settings-breakpoint-lg)) {
     {block}
+  }
+}
 
-when-xl()
-  +when(get-theme(settings-breakpoint-xl))
+when-xl() {
+  +when(get-theme(settings-breakpoint-xl)) {
     {block}
+  }
+}
 
-when-xxl()
-  +when(get-theme(settings-breakpoint-xxl))
+when-xxl() {
+  +when(get-theme(settings-breakpoint-xxl)) {
     {block}
+  }
+}
 
-responsive-font($size)
-  $base = lookup('$z-theme-settings-' + $size + '-font-size')
-  font-size unquote('var(--z-theme-settings-' + $size + '-font-size, ' + $base + ')')
-  if get-theme(settings-responsive-font)
-    $large = lookup('$z-theme-settings-' + $size + '-font-size-lg')
-    font-size clamp(unquote('var(--z-theme-settings-' + $size + '-font-size, ' + $base +')'), get-theme(settings-responsive-font-breakpoint), unquote('var(--z-theme-settings-' + $size + '-font-size, ' + $large + ')'))
+responsive-font($size) {
+  $base = get-theme('settings-' + $size + '-font-size');
+  font-size unquote('var(--z-theme-settings-' + $size + '-font-size, ' + $base + ')');
+  if get-theme(settings-responsive-font) {
+    $large = lookup('$z-theme-settings-' + $size + '-font-size-lg');
+    font-size clamp(unquote('var(--z-theme-settings-' + $size + '-font-size, ' + $base +')'), get-theme(settings-responsive-font-breakpoint), unquote('var(--z-theme-settings-' + $size + '-font-size, ' + $large + ')'));
+  }
+}

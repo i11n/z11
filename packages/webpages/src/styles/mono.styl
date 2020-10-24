@@ -1,0 +1,50 @@
+pre,
+code,
+kbd,
+samp {
+  theme({
+    padding: 0 1px,
+    margin: 0 1px,
+    font-family: settings-mono-font,
+  });
+  responsive-text(small);
+}
+
+code {
+  theme({
+    border-radius: settings-rounded-sm,
+    background-color: slots-code-bg,
+    color: slots-code-text,
+  });
+}
+
+kbd {
+  theme({
+    border-radius: settings-rounded-sm,
+    background-color: slots-kbd-bg,
+    color: slots-kbd-text,
+  });
+
+  & & {
+    font-weight: bold;
+  }
+}
+
+pre {
+  theme({
+    padding: settings-rhythm,
+    border-radius: settings-rounded-md,
+    background-color: slots-pre-background,
+    color: slots-pre-text
+  });
+
+  kbd,
+  code {
+    color: inherit;
+    background-color: inherit;
+  }
+
+  kbd {
+    font-weight: bold;
+  }
+}

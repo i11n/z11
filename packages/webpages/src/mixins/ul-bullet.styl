@@ -1,0 +1,13 @@
+
+ul-bullet($level) {
+  $before = get-theme('settings-ul-bullet' + $level);
+  
+  > li {
+    &::before {
+      theme({
+        color: slots-sub-text,
+        content: 'settings-ul-bullet' + $level,
+      });
+    }
+  }
+}

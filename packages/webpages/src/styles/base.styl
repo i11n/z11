@@ -1,0 +1,183 @@
+html {
+  theme({
+    font-size: settings-base-font-size,
+    font-family: settings-font
+  });
+  responsive-font(base);
+}
+
+body {
+  theme({
+    line-height: settings-leading,
+    text-align: left,
+    color: slots-text,
+    background-color: slots-bg
+  });
+}
+
+hr {
+  theme({
+    border: 0,
+    margin-top: settings-rhythm,
+    margin-bottom: settings-rhythm,
+    background-color: slots-divider
+  });
+}
+
+hr:not([size]) {
+  theme({
+    height: settings-divider-size
+  });
+}
+
+.title,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  heading();
+}
+
+//  Should never be used on a heading element. 
+.title {
+  display: block;
+  responsive-font(5xl);
+}
+
+h1 {
+  responsive-font(4xl);
+}
+
+h2 {
+  responsive-font(3xl);
+}
+
+h3 {
+  responsive-font(xxl);
+}
+
+h4 {
+  responsive-font(xl);
+}
+
+h5,
+.lead {
+  responsive-font(lg);
+}
+
+h6 {
+  responsive-font(base);
+}
+
+small {
+  responsive-font(small);
+}
+
+abbr[title] {
+  cursor: help;
+
+  &.initials {
+    transform: uppercase;
+    responsive-font(small);
+  }
+}
+
+p {
+  theme({
+    margin-top: settings-rhythm,
+    margin-bottom: settings-rhythm,
+  })
+}
+
+address {
+  theme({
+    line-height: inherit,
+    margin-top: settings-rhythm,
+    margin-bottom: settings-rhythm,
+    font-style: normal,
+  });
+
+  p {
+    margin: 0;
+  }
+}
+
+mark {
+  theme({
+    background-color: slots-mark-bg
+  });
+}
+
+del {
+  theme({
+    text-decoration: none,
+    background-color: slots-del-bg,
+    color: slots-del-text,
+  });
+
+  > del {
+    theme({
+      text-decoration: none,
+      background-color: slots-del-nested-bg,
+      color: slots-del-nested-text,
+    });
+  }
+}
+
+ins {
+  theme({
+    text-decoration: none,
+    background-color: slots-ins-bg,
+    color: slots-ins-text,
+  });
+
+  > ins {
+    theme({
+      text-decoration: none,
+      background-color: slots-ins-nested-bg,
+      color: slots-ins-nested-text,
+    });
+  }
+}
+
+b {
+  theme({
+    font-weight: settings-bold-weight,
+  });
+}
+
+strong {
+  theme({
+    font-weight: settings-strong-weight,
+  });
+}
+
+i,
+q {
+  font-style: italic;
+}
+
+em {
+  theme({
+    color: slots-em-text,
+  });
+}
+
+a[href] {
+  &,
+  &:visited {
+    theme({
+      text-decoration: none,
+      color: slots-link-text,
+    });
+  }
+
+  &:hover,
+  &:focus {
+    theme({
+      color: slots-link-hover-text,
+    });
+  }
+}
